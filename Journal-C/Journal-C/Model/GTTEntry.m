@@ -10,6 +10,10 @@
 
 @implementation GTTEntry
 
+static NSString * const TitleKey = @"title";
+static NSString * const BodyTextKey = @"bodyText";
+//static NSString * const TimeStampKey = @"timestamp";
+
 - (instancetype)initWithTitle: (NSString *)title bodyText: (NSString *)bodyText
 {
     self = [super init];
@@ -19,6 +23,20 @@
         _timestamp = [NSDate new];
     }
     return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+        NSString *title = dictionary[TitleKey];
+        NSString *bodyText = dictionary[BodyTextKey];
+//        NSDate *timeStamp = dictionary[TimeStampKey];
+    return [self initWithTitle:title bodyText:bodyText];
+}
+
+- (NSDictionary *)dictionaryCopy
+{
+    return @{TitleKey: self.title,
+             BodyTextKey: self.bodyText};
 }
 
 @end

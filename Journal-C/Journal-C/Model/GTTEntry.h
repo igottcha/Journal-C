@@ -12,11 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GTTEntry : NSObject
 
-@property (nonatomic, copy, readonly) NSDate *timestamp;
-@property (nonatomic, copy, readonly) NSString *title;
-@property (nonatomic, copy, readonly) NSString *bodyText;
-
 - (instancetype)initWithTitle: (NSString *)title bodyText: (NSString *)bodyText;
+- (instancetype)initWithDictionary: (NSDictionary *)dictionary;
+- (NSDictionary *)dictionaryCopy;
+
+@property (nonatomic) NSDate *timestamp;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *bodyText;
 
 @end
 

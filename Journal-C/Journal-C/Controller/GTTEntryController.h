@@ -23,6 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addEntry:(NSString *)title bodyText:(NSString *)bodyText;
 - (void)removeEntry:(GTTEntry *)entry;
 
+//MARK: Persistence
+
+- (void)saveToPersistentStorage;
+- (void)loadFromPersistentStorage;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

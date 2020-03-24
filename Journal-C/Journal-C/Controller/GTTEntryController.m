@@ -9,6 +9,8 @@
 #import "GTTEntryController.h"
 #import "GTTEntry.h"
 
+static NSString * const EntriesKey = @"entries";
+
 @implementation GTTEntryController
 
 //MARK: Shared Instance
@@ -17,8 +19,9 @@
     static GTTEntryController *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-                  shared = [GTTEntryController new];
-                  });
+        shared = [GTTEntryController new];
+        [shared loadFromPersistentStorage];
+    });
     return shared;
 }
 
@@ -26,6 +29,7 @@
 
 - (instancetype)init
 {
+    
     self = [super init];
     if (self) {
         _entries = [[NSMutableArray alloc] init];
@@ -39,11 +43,35 @@
 {
     GTTEntry *entry = [[GTTEntry alloc]initWithTitle:title bodyText:bodyText];
     [_entries addObject:entry];
+    [self saveToPersistentStorage];
 }
 
 - (void) removeEntry:(GTTEntry *)entry
 {
     [_entries removeObject:entry];
+    [self saveToPersistentStorage];
+}
+
+// MARK: Persistence
+
+- (void) saveToPersistentStorage
+{
+    NSMutableArray *entryDictionaries = [NSMutableArray new];
+    
+    for (GTTEntry *entry in self.entries) {
+        [entryDictionaries addObject:entry.dictionaryCopy];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:entryDictionaries forKey:EntriesKey];
+}
+
+- (void) loadFromPersistentStorage
+{
+    NSArray *entryDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:EntriesKey];
+    for (NSDictionary *dictionary in entryDictionaries) {
+        GTTEntry *entry = [[GTTEntry alloc] initWithDictionary:dictionary];
+        [self addEntry:entry.title bodyText:entry.bodyText];
+    }
 }
 
 @end

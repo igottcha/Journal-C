@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9E6338502429516300A56507 /* GTTEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E63384F2429516300A56507 /* GTTEntry.m */; };
 		9E6338532429540500A56507 /* GTTEntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6338522429540500A56507 /* GTTEntryController.m */; };
+		9E63385624296C7C00A56507 /* GTTEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E63385524296C7C00A56507 /* GTTEntryDetailViewController.m */; };
+		9E63385924296C9300A56507 /* GTTEntryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E63385824296C9300A56507 /* GTTEntryListTableViewController.m */; };
 		9EB69B842429504E0013A4D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB69B832429504E0013A4D7 /* AppDelegate.m */; };
 		9EB69B872429504E0013A4D7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB69B862429504E0013A4D7 /* SceneDelegate.m */; };
 		9EB69B8D2429504E0013A4D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB69B8B2429504E0013A4D7 /* Main.storyboard */; };
@@ -22,6 +24,10 @@
 		9E63384F2429516300A56507 /* GTTEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTTEntry.m; sourceTree = "<group>"; };
 		9E6338512429540500A56507 /* GTTEntryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTTEntryController.h; sourceTree = "<group>"; };
 		9E6338522429540500A56507 /* GTTEntryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTTEntryController.m; sourceTree = "<group>"; };
+		9E63385424296C7C00A56507 /* GTTEntryDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTTEntryDetailViewController.h; sourceTree = "<group>"; };
+		9E63385524296C7C00A56507 /* GTTEntryDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTTEntryDetailViewController.m; sourceTree = "<group>"; };
+		9E63385724296C9300A56507 /* GTTEntryListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTTEntryListTableViewController.h; sourceTree = "<group>"; };
+		9E63385824296C9300A56507 /* GTTEntryListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTTEntryListTableViewController.m; sourceTree = "<group>"; };
 		9EB69B7F2429504E0013A4D7 /* Journal-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB69B822429504E0013A4D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9EB69B832429504E0013A4D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -91,6 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				9EB69B8B2429504E0013A4D7 /* Main.storyboard */,
+				9E63385724296C9300A56507 /* GTTEntryListTableViewController.h */,
+				9E63385824296C9300A56507 /* GTTEntryListTableViewController.m */,
+				9E63385424296C7C00A56507 /* GTTEntryDetailViewController.h */,
+				9E63385524296C7C00A56507 /* GTTEntryDetailViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +198,8 @@
 				9EB69B95242950500013A4D7 /* main.m in Sources */,
 				9E6338502429516300A56507 /* GTTEntry.m in Sources */,
 				9E6338532429540500A56507 /* GTTEntryController.m in Sources */,
+				9E63385924296C9300A56507 /* GTTEntryListTableViewController.m in Sources */,
+				9E63385624296C7C00A56507 /* GTTEntryDetailViewController.m in Sources */,
 				9EB69B872429504E0013A4D7 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
